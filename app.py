@@ -19,7 +19,7 @@ import os
 warnings.simplefilter("ignore")
 
 key = os.getenv('key')
-print(key)openai_key = st.secrets["api_keys"]["openai_key"]
+print(key)openai_key = st.secrets["api_keys"]["key"]
 embed = OpenAIEmbeddings(api_key=key,show_progress_bar=True,skip_empty=True)
 
 st.session_state.data = []
