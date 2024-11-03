@@ -6,7 +6,6 @@ from langchain.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory,ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 from openai import OpenAI
-from playsound import playsound
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import PyPDFLoader
 from langchain.chains import ConversationChain
