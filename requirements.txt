@@ -1,6 +1,5 @@
 streamlit
 langchain
-pyttsx3
 langchain-openai
 openai
 langchain
