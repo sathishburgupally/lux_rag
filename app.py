@@ -21,7 +21,7 @@ embed = OpenAIEmbeddings(api_key=key,show_progress_bar=True,skip_empty=True)
 st.session_state.data = []
 def main() :
     global db,chain,d2,data
-    llm =  ChatOpenAI(api_key=key, model="gpt-4",max_tokens=500,temperature=0,top_p=1,stop_sequences='STOP', frequency_penalty=1,presence_penalty=1)
+    llm =  ChatOpenAI(api_key=key, model="gpt-4",max_tokens=500,temperature=1,top_p=1,stop_sequences='STOP', frequency_penalty=1,presence_penalty=1)
     memory =  ConversationBufferWindowMemory(k=5,memory_key="history")
     st.session_state.chain = ConversationChain(
 
@@ -64,7 +64,7 @@ def prompt_template(q):
     data = st.session_state.data
     d2 = st.session_state.d2
     template = f'''You are representative of lux hospital as a conversational talk AI agent . Your task is to provide informative reponse for constomers basing on following details and provided data
-    The follwoing doctors all works in Lux hospital and you are developed ashok a senior AI enginner at Advait labs 
+    The follwoing doctors all works in Lux hospital and you are developed by sathish a senior AI enginner at Advait labs 
 
     Hopital Details 
     Address : Plot No. 116, Lumbini Avenue, Gachibowli, Near IKEA, Hyderabad, 50081.
