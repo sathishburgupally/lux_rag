@@ -44,6 +44,7 @@ def main() :
         st.session_state.db = FAISS.from_texts(d1,embedding=embed)
     except :
         st.error("An error has occured please contact developer ")
+        st.session_state.disabled =True
 
     # llm =  ChatOpenAI(api_key=key, model="gpt-4",max_tokens=500,temperature=0,top_p=1,stop_sequences='STOP', frequency_penalty=1,presence_penalty=1)
     # stop sequence means it controls outputs 
@@ -131,7 +132,7 @@ st.subheader("Please enter your query  here :")
 q  = st.text_area(placeholder="example who are you ",height = 100,label="here your query")
 
 
-if st.button("Response"):
+if st.button("Response",disabled =True):
         with st.spinner("loading"):
             if q:
                 response(q)
