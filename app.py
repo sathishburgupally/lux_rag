@@ -39,8 +39,11 @@ def main() :
     d1 = data.split("######")
     fp = open("info.json")
     d2 = json.load(fp)
-    st.session_state.d2 = d2
-    st.session_state.db = FAISS.from_texts(d1,embedding=embed)
+    try :
+        st.session_state.d2 = d2
+        st.session_state.db = FAISS.from_texts(d1,embedding=embed)
+    except :
+        st.error("An error has occured please contact developer ")
 
     # llm =  ChatOpenAI(api_key=key, model="gpt-4",max_tokens=500,temperature=0,top_p=1,stop_sequences='STOP', frequency_penalty=1,presence_penalty=1)
     # stop sequence means it controls outputs 
